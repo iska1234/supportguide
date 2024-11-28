@@ -4,6 +4,7 @@ import AlertIcon from '../../assets/icons/alertIcon.svg'
 import LogOutBlue from '../../assets/icons/logOutBlue.svg';
 import ChevronDownBlue from '../../assets/icons/chevronDownBlue.svg';
 import ChevronRight from '../../assets/icons/chevron-right.svg'
+import Chevronpink from '../../assets/icons/arrow.svg'
 
 const ICONS = {
 	alertIcon: AlertIcon,
@@ -11,7 +12,8 @@ const ICONS = {
 	eyeOff: EyeOff,
 	logOutBlue: LogOutBlue,
 	chevronRight: ChevronRight,
-	chevronDownBlue: ChevronDownBlue
+	chevronDownBlue: ChevronDownBlue,
+	chevronpink: Chevronpink
 }
 
 export default ICONS;

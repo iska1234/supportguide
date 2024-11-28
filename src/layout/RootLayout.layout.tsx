@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { setCurrentCompanySettings } from "@/redux/slices/companySettings.slice";
 import { useAppDispatch } from "@/redux/storeHooks";
@@ -36,6 +37,7 @@ const RootLayout: React.FC<PropsWithChildren<{ showNavbar?: boolean }>> = ({
           </div>
         </AnimatePresence>
       </div>
+      <Footer/>
     </div>
   );
 };
