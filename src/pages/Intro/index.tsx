@@ -66,7 +66,7 @@ const IntroPage: React.FC = () => {
             <Checkbox
               checked={isCheckboxChecked}
               onCheckedChange={handleCheckboxChange}
-              className="data-[state=checked]:bg-pink-300 data-[state=checked]:border-none border-black text-white"
+              className="data-[state=checked]:bg-pink-300 data-[state=checked]:border-none border-pink-500 text-white"
             />
             <label
               htmlFor="terms1"

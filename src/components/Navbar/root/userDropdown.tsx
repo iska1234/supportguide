@@ -19,10 +19,7 @@ import MenuItem from "./menuItem";
 
 
 const menuItems = [
-  { iconName: "blueUser", label: "Perfil" },
-  { iconName: "ajustesBlue", label: "Ajustes" },
-  { iconName: "tareaBlue", label: "Crear Tareas" },
-  { iconName: "helpDropdown", label: "Ayuda" },
+  { iconName: "cat.png", label: "Ajustes" },
 ];
 
 const UserDropdown: React.FC = () => {
@@ -37,14 +34,13 @@ const UserDropdown: React.FC = () => {
     dispatch(resetAllStates());
   };
 
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="bg-[#E5ECF680] flex p-2 rounded-md items-center gap-2">
       <UserAvatar statusClassName="-bottom-[3px] -right-[3px]" width="w-6 h-6 text-sm " user={user!}/>
         <Icon name="chevronDownBlue" width={12} />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="mr-5  mt-3 h-[500px] w-[360px] p-4 drop-shadow-xl shadow-xl font-primaryRegular justify-between flex flex-col">
+      <DropdownMenuContent className="mr-5  mt-3  w-[360px] p-4 drop-shadow-xl shadow-xl font-primaryRegular justify-between flex flex-col">
         <div>
           <DropdownMenuItem className="gap-2 ">
             <UserAvatar nameClass="mt-1" width="w-10 h-10 text-md" user={user!}/>
@@ -58,9 +54,8 @@ const UserDropdown: React.FC = () => {
             {menuItems.map((item, index) => (
               <MenuItem
                 key={index}
-                iconName={item.iconName as IconName}
+                iconName={item.iconName}
                 label={item.label}
-   
               />
             ))}
           </div>

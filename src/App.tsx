@@ -8,7 +8,6 @@ import CustomCursor from "./components/ui/cursor";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AuthRoute from "./components/ProtectedRoute/authRoute";
 import TopicsPage from "./pages/Topics";
-
 import DedicatoryPage from "./pages/Dedicatory";
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -21,13 +20,12 @@ import Topic8Page from "./pages/Topics/topic8";
 import Topic9Page from "./pages/Topics/topic9";
 import Topic7Page from "./pages/Topics/topic7";
 import Topic4Page from "./pages/Topics/topic4";
+import SettingsPage from "./pages/settings";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <IntroPage />
-    ),
+    element: <IntroPage />,
   },
   {
     path: "/login",
@@ -48,83 +46,113 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/settings",
+    element: (
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <SettingsPage />
+        </RootLayoutLayout>
+      </ProtectedRoute>
+    ),
+  },
+  {
     path: "/topics",
     element: (
-      <RootLayoutLayout>
-        <TopicsPage />
-      </RootLayoutLayout>
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <TopicsPage />
+        </RootLayoutLayout>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/topic/1",
     element: (
-      <RootLayoutLayout>
-        <Topic1Page />
-      </RootLayoutLayout>
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <Topic1Page />
+        </RootLayoutLayout>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/topic/2",
     element: (
-      <RootLayoutLayout>
-        <Topic2Page />
-      </RootLayoutLayout>
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <Topic2Page />
+        </RootLayoutLayout>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/topic/3",
     element: (
-      <RootLayoutLayout>
-        <Topic3Page />
-      </RootLayoutLayout>
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <Topic3Page />
+        </RootLayoutLayout>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/topic/4",
     element: (
-      <RootLayoutLayout>
-        <Topic4Page />
-      </RootLayoutLayout>
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <Topic4Page />
+        </RootLayoutLayout>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/topic/5",
     element: (
-      <RootLayoutLayout>
-        <Topic5Page />
-      </RootLayoutLayout>
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <Topic5Page />
+        </RootLayoutLayout>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/topic/6",
     element: (
-      <RootLayoutLayout>
-        <Topic6Page />
-      </RootLayoutLayout>
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <Topic6Page />
+        </RootLayoutLayout>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/topic/7",
     element: (
-      <RootLayoutLayout>
-        <Topic7Page />
-      </RootLayoutLayout>
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <Topic7Page />
+        </RootLayoutLayout>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/topic/8",
     element: (
-      <RootLayoutLayout>
-        <Topic8Page />
-      </RootLayoutLayout>
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <Topic8Page />
+        </RootLayoutLayout>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/topic/9",
     element: (
-      <RootLayoutLayout>
-        <Topic9Page />
-      </RootLayoutLayout>
+      <ProtectedRoute>
+        <RootLayoutLayout>
+          <Topic9Page />
+        </RootLayoutLayout>
+      </ProtectedRoute>
     ),
   },
   {

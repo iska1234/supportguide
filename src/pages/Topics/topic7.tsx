@@ -1,9 +1,13 @@
-import React from 'react'
+import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
+import React from "react";
 
-const Topic7Page = () => {
+const Topic7Page:React.FC  = () => {
   return (
-    <div>Topic1Page</div>
-  )
-}
+    <>
+      <TransitionEffect />
+      <div className="mt-10 pb-12 bg-gradient-to-b from-pink-50 to-pink-100 px-12 lg:px-20 text-gray-800 ">Topic1Page</div>
+    </>
+  );
+};
 
-export default Topic7Page
+export default Topic7Page;

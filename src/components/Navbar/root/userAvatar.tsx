@@ -19,11 +19,11 @@ const UserAvatar: React.FC<UserAvatarProps> = ({ width, user, statusClassName, l
       {user?.proffilePic ? (
         <Avatar className={cn("rounded-full", width)}>
           <AvatarImage src={user?.proffilePic} alt="Profile Picture" />
-          <AvatarFallback className={cn("bg-primary text-white rounded-full", width)} />
+          <AvatarFallback className={cn("bg-pink-400 text-white rounded-full", width)} />
         </Avatar>
       ) : (
         <Avatar className={cn("rounded-full", width)}>
-          <AvatarFallback className={cn("bg-primary text-white rounded-full ", width)}>
+          <AvatarFallback className={cn("bg-pink-400 text-white rounded-full ", width)}>
             <span className={nameClass}>
             {user?.name?.charAt(0).toUpperCase()}
             </span>

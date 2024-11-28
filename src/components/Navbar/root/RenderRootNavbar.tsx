@@ -6,10 +6,14 @@ interface RenderRootNavbarProps {
 }
 
 const RenderRootNavbar: React.FC<RenderRootNavbarProps> = ({ pathname }) => {
-  switch (pathname) {
-    case "/home":
-    case "/topics":
-    case "/dedicatory":
+  const topicRouteRegex = /^\/topic\/\d+$/;
+
+  switch (true) {
+    case pathname === "/home":
+    case pathname === "/topics":
+    case pathname === "/dedicatory":
+    case pathname === "/settings":
+    case topicRouteRegex.test(pathname):
       return <RootNavbar />;
 
     default:
