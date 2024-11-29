@@ -12,57 +12,16 @@ import React, { useState } from "react";
 import CatAmim from "../../assets/animation/cat.json";
 import Lottie from "@/components/Lottie";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useAppDispatch, useAppSelector } from "@/redux/storeHooks";
-import { useNavigate } from "react-router-dom";
-import { updateTopic } from "@/services/topic";
-import { setTopics } from "@/redux/slices/topic.slice";
-
-const MessageFromCat = () => {
-  return (
-    <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 1, duration: 0.5 }}
-    className="absolute bg-white text-black px-4 py-2 rounded-md shadow-md border border-gray-300"
-  >
-    <p className="italic text-lg w-36">
-      Pasa sobre las imágenes para ver los detalles c:
-    </p>
-  </motion.div>
-  );
-};
+import MessageFromCat from "@/components/messageFromCat";
+import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
 
 const Topic2Page: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
-  const {topics} = useAppSelector(store => store.topic)
-  const [isChecked, setIsChecked] = useState(false);
-  const navigate = useNavigate()
-  const dispatch = useAppDispatch()
-
-  const update = async () => {
-    try {
-      const response = await updateTopic({ id: 2, isCompleted: isChecked });
-
-      if (response.success && response.data) {
-        const updatedTopics = topics.map((topic) =>
-          topic.id === response.data.id ? { ...topic, ...response.data } : topic
-        );
-        dispatch(setTopics(updatedTopics));
-      }
-
-    } catch (error) {
-      console.error("Error al actualizar el topic:", error);
-    }
-  };
-
-  const navigateto = () => {
-    navigate("/topic/3");
-  }
-
-  const combinate = () => {
-    update()
-    navigateto()
-  }
+  const { isChecked, setIsChecked, combinate } = useUpdateAndNavigate({
+    topicId: 2,
+    nextRoute: "/topic/3",
+  });
+  
   
   return (
     <div className="mt-10 pb-16 min-h-screen bg-gradient-to-b from-pink-50 to-pink-100 px-12 lg:px-20 text-gray-800">
@@ -467,13 +426,13 @@ const Topic2Page: React.FC = () => {
           </p>
 
           <div className="flex items-center w- relative">
-        <div className="">
-          <Lottie animationData={CatAmim} width={"300px"} height={"300px"} />
-          <div className="absolute top-0 -left-12">
-            <MessageFromCat />
+          <div className="">
+            <Lottie animationData={CatAmim} width={"300px"} height={"300px"} />
+            <div className="absolute top-0 -left-12">
+              <MessageFromCat message="Pasa el cursor para que puedas ver más detalles c:"/>
+            </div>
           </div>
-        </div>
-      </div>
+         </div>
         </div>
         <div className="w-full h-full flex gap-20">
           <div className="flex flex-col w-full gap-10">

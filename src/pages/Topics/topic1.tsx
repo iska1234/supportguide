@@ -1,42 +1,14 @@
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { setTopics } from "@/redux/slices/topic.slice";
-import { useAppDispatch, useAppSelector } from "@/redux/storeHooks";
-import { updateTopic } from "@/services/topic";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
+import React from "react";
 
 const Topic1Page: React.FC = () => {
-  const {topics} = useAppSelector(store => store.topic)
-  const [isChecked, setIsChecked] = useState(false);
-  const navigate = useNavigate()
-  const dispatch = useAppDispatch()
-
-  const update = async () => {
-    try {
-      const response = await updateTopic({ id: 1, isCompleted: isChecked });
-
-      if (response.success && response.data) {
-        const updatedTopics = topics.map((topic) =>
-          topic.id === response.data.id ? { ...topic, ...response.data } : topic
-        );
-        dispatch(setTopics(updatedTopics));
-      }
-
-    } catch (error) {
-      console.error("Error al actualizar el topic:", error);
-    }
-  };
-
-  const navigateto = () => {
-    navigate("/topic/2");
-  }
-
-  const combinate = () => {
-    update()
-    navigateto()
-  }
+  const { isChecked, setIsChecked, combinate } = useUpdateAndNavigate({
+    topicId: 1,
+    nextRoute: "/topic/2",
+  });
   
 
   return (
