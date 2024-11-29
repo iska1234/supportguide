@@ -1,7 +1,7 @@
 import TransitionEffect from '@/components/transitionEffect/TransitionEffect'
 import React from 'react'
 
-const SettingsPage = () => {
+const SettingsPage:React.FC = () => {
   return (
     <>
       <TransitionEffect />

@@ -13,7 +13,6 @@ import { onLogOut } from "@/services/auth";
 import { useNavigate } from "react-router-dom";
 import { resetAllStates } from "@/redux/store";
 import { useAppDispatch, useAppSelector } from "@/redux/storeHooks";
-import { IconName } from "@/lib/constants/icons";
 import UserAvatar from "./userAvatar";
 import MenuItem from "./menuItem";
 
