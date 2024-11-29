@@ -32,7 +32,7 @@ const updateTopic = async ({
   title,
   description,
   isCompleted,
-}: UpdateTopic): Promise<NetworkSuccess<{ data: Topic }>> => {
+}: UpdateTopic): Promise<NetworkSuccess> => {
   try {
     const token = localStorage.getItem("token");
     if (!token) {

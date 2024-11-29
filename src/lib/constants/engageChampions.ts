@@ -12,27 +12,33 @@ export const engageChampions = [
   
   export const engageFeatures = [
     {
-      text: "Perfectos para aprovechar el mal posicionamiento",
-      highlight: "text-orange-500",
+      text: "Perfectos para aprovechar el mal posicionamiento de los oponentes.",
+      highlight: "Perfectos para aprovechar el mal posicionamiento",
+      color: "text-orange-500",
     },
     {
-      text: "Funcionan excepcionalmente bien con ADC agresivos",
-      highlight: "text-orange-500",
+      text: "Funcionan excepcionalmente bien con ADC agresivos.",
+      highlight: "ADC agresivos",
+      color: "text-orange-500",
     },
     {
-      text: "Muy útiles para moverse por el mapa y crear oportunidades",
-      highlight: "text-orange-500",
+      text: "Muy útiles para moverse por el mapa y crear oportunidades.",
+      highlight: "moverse por el mapa y crear oportunidades",
+      color: "text-orange-500",
     },
     {
-      text: "Excelentes en equipos con rápida respuesta a iniciaciones",
-      highlight: "text-orange-500",
+      text: "Excelentes en equipos con rápida respuesta a iniciaciones.",
+      highlight: "rápida respuesta a iniciaciones",
+      color: "text-orange-500",
     },
     {
-      text: "Es clave conocer nuestros puntos fuertes para saber el momento adecuado para iniciar",
-      highlight: "text-orange-500",
+      text: "Es clave conocer nuestros puntos fuertes para saber el momento adecuado para iniciar.",
+      highlight: "conocer nuestros puntos fuertes",
+      color: "text-orange-500",
     },
     {
-      text: "Son efectivos contra soportes de sustain, aprovechando su falta de movilidad",
-      highlight: "text-orange-500",
+      text: "Son efectivos contra soportes de sustain, aprovechando su falta de movilidad.",
+      highlight: "soportes de sustain",
+      color: "text-orange-500",
     },
   ];

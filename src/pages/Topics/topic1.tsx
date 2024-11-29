@@ -4,7 +4,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { setTopics } from "@/redux/slices/topic.slice";
 import { useAppDispatch, useAppSelector } from "@/redux/storeHooks";
 import { updateTopic } from "@/services/topic";
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -16,16 +15,14 @@ const Topic1Page: React.FC = () => {
 
   const update = async () => {
     try {
-      const { data, success } = await updateTopic({ id: 1, isCompleted: isChecked });
-  
-      if (success) {
+      const response = await updateTopic({ id: 1, isCompleted: isChecked });
+
+      if (response.success && response.data) {
         const updatedTopics = topics.map((topic) =>
-          topic.id === data.data.id ? { ...topic, ...data.data } : topic
+          topic.id === response.data.id ? { ...topic, ...response.data } : topic
         );
         dispatch(setTopics(updatedTopics));
       }
-
- 
 
     } catch (error) {
       console.error("Error al actualizar el topic:", error);
@@ -141,7 +138,7 @@ const Topic1Page: React.FC = () => {
             htmlFor="skip-intro"
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
-            Omitir intro de 10 segundos para el próximo ingreso
+             Marcar como completada
           </label>
           <Button
             className="bg-pink-400 hover:bg-pink-500 text-white"

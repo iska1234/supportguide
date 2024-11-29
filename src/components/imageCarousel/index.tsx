@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  'lulu.jpg',
-  'janna.jpg',
-  'milio.webp',
-  'nami.webp',
-  'seraphine.webp',
+  'luluCarousel.jpg',
+  'jannaCarousel.jpg',
+  'milioCarousel.webp',
+  'namiCarousel.webp',
+  'seraphineCarousel.webp',
 ];
 
 const ImageCarousel: React.FC = () => {
