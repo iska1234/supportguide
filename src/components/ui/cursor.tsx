@@ -22,7 +22,7 @@ const CustomCursor: React.FC = () => {
       }}
     >
         <img
-        src="/cursor.png"
+        src="/cursor.webp"
         alt="Custom Cursor"
         className="cursor-image"
       />

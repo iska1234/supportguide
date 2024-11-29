@@ -438,7 +438,7 @@ const Topic2Page: React.FC = () => {
           <div className="flex flex-col w-full gap-10">
             <div className="relative min-h-[300px] min-w-[400px] border-2 border-orange-500 rounded-md overflow-hidden group">
               <img
-                src="../engage.png"
+                src="../engage.webp"
                 alt="Engage"
                 className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
               />
@@ -460,7 +460,7 @@ const Topic2Page: React.FC = () => {
 
             <div className="relative min-h-[300px] min-w-[400px] border-2 border-purple-500 rounded-md overflow-hidden group">
               <img
-                src="../peel.png"
+                src="../peel.webp"
                 alt="Peel"
                 className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
               />
@@ -500,7 +500,7 @@ const Topic2Page: React.FC = () => {
           <div className="flex flex-col w-full gap-10">
             <div className="relative min-h-[300px] min-w-[400px] border-2 border-green-500 rounded-md overflow-hidden group">
               <img
-                src="../sustain.png"
+                src="../sustain.webp"
                 alt="Sustain"
                 className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
               />
@@ -524,7 +524,7 @@ const Topic2Page: React.FC = () => {
 
             <div className="relative min-h-[300px] min-w-[400px] border-2 border-rose-500 rounded-md overflow-hidden group">
               <img
-                src="../poke.png"
+                src="../poke.webp"
                 alt="Poke"
                 className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
               />

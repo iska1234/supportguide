@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  'luluCarousel.jpg',
-  'jannaCarousel.jpg',
+  'luluCarousel.webp',
+  'jannaCarousel.webp',
   'milioCarousel.webp',
   'namiCarousel.webp',
   'seraphineCarousel.webp',

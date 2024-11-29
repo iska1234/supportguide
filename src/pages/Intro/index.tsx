@@ -84,7 +84,7 @@ const IntroPage: React.FC = () => {
             Ingresar :D
           </Button>
         </div>
-        {["/dm.png", "/stickerwsp.png", "/pastito.png", "/florDorada.png"].map(
+        {["/dm.webp", "/stickerwsp.webp", "/pastito.webp", "/florDorada.webp"].map(
           (src, index) => (
             <motion.img
               key={index}
