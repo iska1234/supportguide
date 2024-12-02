@@ -88,21 +88,21 @@ const router = createBrowserRouter([
   {
     path: "/topic/3",
     element: (
-      <ProtectedRoute>
+
         <RootLayoutLayout>
           <Topic3Page />
         </RootLayoutLayout>
-      </ProtectedRoute>
+     
     ),
   },
   {
     path: "/topic/4",
     element: (
-      <ProtectedRoute>
+   
         <RootLayoutLayout>
           <Topic4Page />
         </RootLayoutLayout>
-      </ProtectedRoute>
+    
     ),
   },
   {
