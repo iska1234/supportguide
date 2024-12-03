@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MarkAsCompleted from "@/components/markAsCompleted";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
 import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
@@ -9,6 +9,13 @@ const Topic8Page: React.FC = () => {
     nextRoute: "/topic/9",
   });
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+  
   return (
     <>
       <TransitionEffect />

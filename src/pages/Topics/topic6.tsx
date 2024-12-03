@@ -2,7 +2,7 @@ import ImageMagnifier from "@/components/ImageMagnifier";
 import MarkAsCompleted from "@/components/markAsCompleted";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
 import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Topic6Page: React.FC = () => {
 
@@ -10,6 +10,13 @@ const Topic6Page: React.FC = () => {
     topicId: 6,
     nextRoute: "/topic/7",
   });
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <>

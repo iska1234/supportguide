@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
 import { wardsData } from "@/lib/constants/wardsData";
 import ImageMagnifier from "@/components/ImageMagnifier";
@@ -12,6 +12,13 @@ const Topic7Page: React.FC = () => {
     topicId: 7,
     nextRoute: "/topic/8",
   });
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <>

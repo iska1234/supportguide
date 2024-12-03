@@ -1,7 +1,7 @@
 import ProsContras from "@/components/championsTable/prosContrasTable";
 import MessageFromCat from "@/components/messageFromCat";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
-import React from "react";
+import React, { useEffect } from "react";
 import MarkAsCompleted from "@/components/markAsCompleted";
 import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
 
@@ -12,6 +12,14 @@ const Topic3Page:React.FC  = () => {
     nextRoute: "/topic/4",
   });
   
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+  
+
   return (
     <>
       <TransitionEffect />

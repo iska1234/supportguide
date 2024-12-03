@@ -4,7 +4,7 @@ import TransitionEffect from '@/components/transitionEffect/TransitionEffect';
 import { Checkbox } from '@/components/ui/checkbox';
 import Icon from '@/components/ui/Icon';
 import { useAppSelector } from '@/redux/storeHooks';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CatAmim from "../../assets/animation/cat.json";
 import CatAmim2 from "../../assets/animation/cat2.json";
@@ -20,7 +20,13 @@ const TopicsPage: React.FC = () => {
     navigate(`/topic/${topicId}`);
   };
 
-  console.log(allTopics)
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <>
       <TransitionEffect />

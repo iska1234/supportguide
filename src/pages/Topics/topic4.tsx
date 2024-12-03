@@ -2,7 +2,7 @@ import SupportItemsTable from "@/components/championsTable/supportItemTables";
 import MarkAsCompleted from "@/components/markAsCompleted";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
 import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Topic4Page: React.FC = () => {
   
@@ -11,6 +11,13 @@ const Topic4Page: React.FC = () => {
     nextRoute: "/topic/5",
   });
   
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <>
       <TransitionEffect />

@@ -8,7 +8,7 @@ import { peelChampions } from "@/lib/constants/peelChampions";
 import { pokeChampions } from "@/lib/constants/pokeChampions";
 import { sustainChampions } from "@/lib/constants/sustainChampions";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MessageFromCat from "@/components/messageFromCat";
 import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
 import MarkAsCompleted from "@/components/markAsCompleted";
@@ -20,6 +20,12 @@ const Topic2Page: React.FC = () => {
     nextRoute: "/topic/3",
   });
   
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   
   return (
     <div className="mt-10 pb-16 min-h-screen bg-gradient-to-b from-pink-50 to-pink-100 px-12 lg:px-20 text-gray-800">

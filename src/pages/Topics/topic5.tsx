@@ -2,7 +2,7 @@ import MarkAsCompleted from "@/components/markAsCompleted";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
 import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
 import { wardsDescriptions } from "@/lib/constants/wardsDescription";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Topic5Page: React.FC = () => {
   
@@ -10,6 +10,13 @@ const Topic5Page: React.FC = () => {
     topicId: 5,
     nextRoute: "/topic/6",
   });
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MarkAsCompleted from "@/components/markAsCompleted";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
 import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
@@ -10,6 +10,13 @@ const Topic9Page: React.FC = () => {
     nextRoute: "/dedicatory",
   });
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+  
   return (
     <>
       <TransitionEffect />
