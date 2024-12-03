@@ -9,15 +9,13 @@ import { pokeChampions } from "@/lib/constants/pokeChampions";
 import { sustainChampions } from "@/lib/constants/sustainChampions";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import CatAmim from "../../assets/animation/cat.json";
-import Lottie from "@/components/Lottie";
-import { Checkbox } from "@/components/ui/checkbox";
 import MessageFromCat from "@/components/messageFromCat";
 import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
+import MarkAsCompleted from "@/components/markAsCompleted";
 
 const Topic2Page: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
-  const { isChecked, setIsChecked, combinate } = useUpdateAndNavigate({
+  const { isChecked, isCompleted ,setIsChecked, combinate } = useUpdateAndNavigate({
     topicId: 2,
     nextRoute: "/topic/3",
   });
@@ -425,14 +423,8 @@ const Topic2Page: React.FC = () => {
             </span>
           </p>
 
-          <div className="flex items-center w- relative">
-          <div className="">
-            <Lottie animationData={CatAmim} width={"300px"} height={"300px"} />
-            <div className="absolute top-0 -left-12">
-              <MessageFromCat message="Pasa el cursor para que puedas ver más detalles c:"/>
-            </div>
-          </div>
-         </div>
+          <MessageFromCat message="Pasa el cursor para que puedas ver más detalles c:"/>
+     
         </div>
         <div className="w-full h-full flex gap-20">
           <div className="flex flex-col w-full gap-10">
@@ -551,27 +543,12 @@ const Topic2Page: React.FC = () => {
         </p>
         <ChampionsTable />
       </div>
-      <div className="flex items-center justify-center space-x-4 mt-8">
-          <Checkbox
-            id="skip-intro"
-            checked={isChecked}
-            onCheckedChange={(checked) => setIsChecked(Boolean(checked))}
-            className="data-[state=checked]:bg-pink-300 data-[state=checked]:border-none border-pink-500 text-white"
-          />
-          <label
-            htmlFor="skip-intro"
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Marcar como completada
-          </label>
-          <Button
-            className="bg-pink-400 hover:bg-pink-500 text-white"
-            disabled={!isChecked}
-            onClick={combinate}
-          >
-            Ir a la siguiente sección
-          </Button>
-        </div>
+      <MarkAsCompleted 
+        isCompleted={isCompleted}
+        combinate={combinate}
+        isChecked={isChecked}
+        setIsChecked={setIsChecked}
+      />
     </div>
   );
 };

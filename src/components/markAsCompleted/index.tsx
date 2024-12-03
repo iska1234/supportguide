@@ -1,16 +1,31 @@
-import React from 'react'
-import { Checkbox } from '../ui/checkbox'
-import { Button } from '../ui/button'
+import React from "react";
+import { Checkbox } from "../ui/checkbox";
+import { Button } from "../ui/button";
 
-interface MarkAsCompletedProps{
-    isChecked: boolean;
-    setIsChecked: (checked: boolean) => void; 
-    combinate: () => void;
+interface MarkAsCompletedProps {
+  isChecked: boolean;
+  isCompleted: boolean;
+  setIsChecked: (checked: boolean) => void;
+  combinate: () => void;
 }
 
-const MarkAsCompleted:React.FC<MarkAsCompletedProps> = ({isChecked, combinate, setIsChecked}) => {
+const MarkAsCompleted: React.FC<MarkAsCompletedProps> = ({
+  isChecked,
+  isCompleted,
+  combinate,
+  setIsChecked,
+}) => {
   return (
     <div className="flex items-center justify-center space-x-4 mt-8">
+      {isCompleted ? (
+        <Button
+          className="bg-pink-400 hover:bg-pink-500 text-white"
+          onClick={combinate}
+        >
+          Siguiente sección
+        </Button>
+      ) : (
+        <>
           <Checkbox
             id="skip-intro"
             checked={isChecked}
@@ -30,8 +45,10 @@ const MarkAsCompleted:React.FC<MarkAsCompletedProps> = ({isChecked, combinate, s
           >
             Ir a la siguiente sección
           </Button>
-        </div>
-  )
-}
+        </>
+      )}
+    </div>
+  );
+};
 
-export default MarkAsCompleted
+export default MarkAsCompleted;

@@ -1,8 +1,16 @@
+import MarkAsCompleted from "@/components/markAsCompleted";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
+import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
 import { wardsDescriptions } from "@/lib/constants/wardsDescription";
 import React from "react";
 
 const Topic5Page: React.FC = () => {
+  
+  const { isChecked, isCompleted,setIsChecked, combinate } = useUpdateAndNavigate({
+    topicId: 5,
+    nextRoute: "/topic/6",
+  });
+
   return (
     <>
       <TransitionEffect />
@@ -10,20 +18,20 @@ const Topic5Page: React.FC = () => {
         <h1 className="mt-24 text-4xl font-bold text-center text-pink-700 mb-12">
           Fase de Lineas como Soporte
         </h1>
-        <div className="flex flex-col space-y-10">
-          <section className="text-black text-lg text-justify pb-10 px-10">
+        <div className="flex flex-col space-y-10 px-4">
+          <section className="text-black text-lg text-justify pb-10 ">
             <h2 className="text-2xl font-semibold text-pink-600">
               Introducción
             </h2>
             <p>
               Como soporte, tu rol principal en la fase de líneas es proteger a
               tu tirador (ADC), controlar la visión y ayudar a generar ventajas
-              en bot. Esta sección te dará las claves para maximizar tu impacto en
-              el juego temprano
+              en bot. Esta sección te dará las claves para maximizar tu impacto
+              en el juego temprano
             </p>
           </section>
 
-          <section className="text-black text-lg text-justify pb-10 px-10">
+          <section className="text-black text-lg text-justify pb-10 ">
             <h2 className="text-2xl font-semibold text-pink-600">
               1. Control de Visión
             </h2>
@@ -51,7 +59,7 @@ const Topic5Page: React.FC = () => {
             </div>
           </section>
 
-          <section className="text-black text-lg text-justify pb-10 px-10">
+          <section className="text-black text-lg text-justify pb-10">
             <h2 className="text-2xl font-semibold text-pink-600">
               2. Posicionamiento
             </h2>
@@ -70,7 +78,7 @@ const Topic5Page: React.FC = () => {
                 <p className="font-primaryMedium">
                   Ejemplo de buen posicionamiento
                 </p>
-                <div className="w-[600px] h-[400px] overflow-hidden rounded-lg">
+                <div className="w-[500px] h-[400px] overflow-hidden rounded-lg">
                   <img
                     src="../buenPosicionamiento.webp"
                     className="w-full h-full object-cover"
@@ -127,10 +135,18 @@ const Topic5Page: React.FC = () => {
             </h2>
             <p>
               Juega con tu team para asegurar los objetivos de early, por
-              ejemplo, los early drakes, los primeros voids y la torre. Para asegurar estos objetivos tienes que tener en cuenta los puntos anteriores, un paso a la vez.
+              ejemplo, los early drakes, los primeros voids y la torre. Para
+              asegurar estos objetivos tienes que tener en cuenta los puntos
+              anteriores, un paso a la vez.
             </p>
           </section>
         </div>
+        <MarkAsCompleted
+          isCompleted={isCompleted}
+          combinate={combinate}
+          isChecked={isChecked}
+          setIsChecked={setIsChecked}
+        />
       </div>
     </>
   );

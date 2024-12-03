@@ -14,12 +14,6 @@ import { useNavigate } from "react-router-dom";
 import { resetAllStates } from "@/redux/store";
 import { useAppDispatch, useAppSelector } from "@/redux/storeHooks";
 import UserAvatar from "./userAvatar";
-import MenuItem from "./menuItem";
-
-
-const menuItems = [
-  { iconName: "cat.png", label: "Ajustes" },
-];
 
 const UserDropdown: React.FC = () => {
 
@@ -48,16 +42,6 @@ const UserDropdown: React.FC = () => {
               <span className="text-[#9F9FA5]">En linea</span>
             </div>
           </DropdownMenuItem>
-          <DropdownMenuSeparator className="my-4" />
-          <div className="flex flex-col gap-4">
-            {menuItems.map((item, index) => (
-              <MenuItem
-                key={index}
-                iconName={item.iconName}
-                label={item.label}
-              />
-            ))}
-          </div>
         </div>
         <div>
           <DropdownMenuSeparator className="my-2" />

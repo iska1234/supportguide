@@ -5,10 +5,12 @@ import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
 import React from "react";
 
 const Topic4Page: React.FC = () => {
-  const { isChecked, setIsChecked, combinate } = useUpdateAndNavigate({
+  
+  const { isChecked, isCompleted ,setIsChecked, combinate } = useUpdateAndNavigate({
     topicId: 4,
     nextRoute: "/topic/5",
   });
+  
   return (
     <>
       <TransitionEffect />
@@ -28,6 +30,7 @@ const Topic4Page: React.FC = () => {
           <SupportItemsTable />
         </div>
         <MarkAsCompleted 
+          isCompleted={isCompleted}
           combinate={combinate}
           isChecked={isChecked}
           setIsChecked={setIsChecked}

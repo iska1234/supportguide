@@ -11,6 +11,7 @@ interface UseUpdateAndNavigateProps {
 
 export const useUpdateAndNavigate = ({ topicId, nextRoute }: UseUpdateAndNavigateProps) => {
   const { topics } = useAppSelector((store) => store.topic);
+  const topic = topics.find((t) => t.id === topicId);
   const [isChecked, setIsChecked] = useState(false);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -46,6 +47,7 @@ export const useUpdateAndNavigate = ({ topicId, nextRoute }: UseUpdateAndNavigat
 
   return {
     isChecked,
+    isCompleted: topic?.iscompleted || false,
     setIsChecked,
     update,
     combinate,

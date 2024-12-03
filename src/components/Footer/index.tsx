@@ -10,14 +10,15 @@ const Footer: React.FC = () => {
               Sobre Nosotros
             </h2>
             <p className="text-sm leading-relaxed">
-              En BoostLab, ofrecemos servicios de boosting, coaching y cuentas para ayudarte a alcanzar tus metas en el juego.
+              En proceso
             </p>
           </div>
           <div>
             <h2 className="text-lg font-semibold text-pink-500 mb-4">
               Enlaces Rápidos
             </h2>
-            <ul className="space-y-2">
+            En proceso
+            {/* <ul className="space-y-2">
               <li>
                 <a
                   href="/home"
@@ -50,17 +51,17 @@ const Footer: React.FC = () => {
                   Preguntas Frecuentes
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
 
           <div>
             <h2 className="text-lg font-semibold text-pink-500 mb-4">
-              Síguenos
+              Sigueme
             </h2>
             <ul className="flex space-x-4">
               <li>
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/ihswt/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-pink-400 transition-colors duration-300"
@@ -70,22 +71,12 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="https://twitter.com"
+                  href="https://github.com/iska1234"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-pink-400 transition-colors duration-300"
                 >
-                  <i className="fab fa-twitter"></i> Twitter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-pink-400 transition-colors duration-300"
-                >
-                  <i className="fab fa-instagram"></i> Instagram
+                  <i className="fab fa-instagram"></i> Github
                 </a>
               </li>
             </ul>
@@ -94,7 +85,7 @@ const Footer: React.FC = () => {
 
         <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm">
           <p>
-            © 2024 Dm. Todos los derechos reservados. | Diseñado con{" "}
+            © 2024 Todos los derechos reservados. | Diseñado con mucho{" "}
             <span className="text-pink-500">❤</span> por iskadev
           </p>
         </div>

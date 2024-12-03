@@ -7,7 +7,6 @@ import { useAppDispatch } from "@/redux/storeHooks";
 import { getUserById } from "@/services/auth";
 import { getAllSettings } from "@/services/companySettings";
 import { getTopics } from "@/services/topic";
-import { AnimatePresence } from "framer-motion";
 import React, { PropsWithChildren, useEffect } from "react";
 
 const RootLayout: React.FC<PropsWithChildren<{ showNavbar?: boolean }>> = ({
@@ -57,13 +56,11 @@ const RootLayout: React.FC<PropsWithChildren<{ showNavbar?: boolean }>> = ({
     <div>
       {showNavbar && <Navbar pathname={pathname} />}
       <div className={`flex bg-white `}>
-        <AnimatePresence mode="wait">
           <div
             className={`flex flex-col flex-1 overflow-y-hidden overflow-x-auto `}
           >
             {children}
           </div>
-        </AnimatePresence>
       </div>
       <Footer/>
     </div>

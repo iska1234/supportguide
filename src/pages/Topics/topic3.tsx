@@ -1,15 +1,13 @@
 import ProsContras from "@/components/championsTable/prosContrasTable";
-import Lottie from "@/components/Lottie";
 import MessageFromCat from "@/components/messageFromCat";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
-import CatAmim from "../../assets/animation/cat.json";
 import React from "react";
 import MarkAsCompleted from "@/components/markAsCompleted";
 import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
 
 const Topic3Page:React.FC  = () => {
 
-  const { isChecked, setIsChecked, combinate } = useUpdateAndNavigate({
+  const { isChecked, isCompleted ,setIsChecked, combinate } = useUpdateAndNavigate({
     topicId: 3,
     nextRoute: "/topic/4",
   });
@@ -27,14 +25,7 @@ const Topic3Page:React.FC  = () => {
 
           </p>
 
-          <div className="flex items-center w- relative">
-          <div className="">
-            <Lottie animationData={CatAmim} width={"300px"} height={"300px"} />
-            <div className="absolute top-0 -left-16">
-              <MessageFromCat message="El gatito dice que procures seguir la guía, caso contrario irá por ti c:"/>
-            </div>
-          </div>
-         </div>
+          <MessageFromCat message="Pasa el cursor para que puedas ver más detalles c:"/>
         </div>
         <p className="italic text-black text-lg text-justify w-2/3 pb-10 px-10">
         
@@ -43,6 +34,7 @@ const Topic3Page:React.FC  = () => {
                     <ProsContras />
           </div>
           <MarkAsCompleted 
+          isCompleted={isCompleted}
           combinate={combinate}
           isChecked={isChecked}
           setIsChecked={setIsChecked}

@@ -1,11 +1,10 @@
+import MarkAsCompleted from "@/components/markAsCompleted";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
 import React from "react";
 
 const Topic1Page: React.FC = () => {
-  const { isChecked, setIsChecked, combinate } = useUpdateAndNavigate({
+  const { isChecked, isCompleted ,setIsChecked, combinate } = useUpdateAndNavigate({
     topicId: 1,
     nextRoute: "/topic/2",
   });
@@ -14,7 +13,7 @@ const Topic1Page: React.FC = () => {
   return (
     <>
       <TransitionEffect />
-      <div className="mt-10 pb-16 bg-gradient-to-b from-pink-50 to-pink-100 px-12 lg:px-20 text-gray-800 ">
+      <div className="min-h-screen mt-10 pb-16 bg-gradient-to-b from-pink-50 to-pink-100 px-12 lg:px-20 text-gray-800 ">
         <h1 className="mt-24 text-4xl font-bold text-center text-pink-700 mb-12">
           Comprendiendo el Rol de Soporte
         </h1>
@@ -99,27 +98,12 @@ const Topic1Page: React.FC = () => {
             y asegurar una victoria.
           </p>
         </div>
-        <div className="flex items-center justify-center space-x-4 mt-8">
-          <Checkbox
-            id="skip-intro"
-            checked={isChecked}
-            onCheckedChange={(checked) => setIsChecked(Boolean(checked))}
-            className="data-[state=checked]:bg-pink-300 data-[state=checked]:border-none border-pink-500 text-white"
+        <MarkAsCompleted 
+          isCompleted={isCompleted}
+          combinate={combinate}
+          isChecked={isChecked}
+          setIsChecked={setIsChecked}
           />
-          <label
-            htmlFor="skip-intro"
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-             Marcar como completada
-          </label>
-          <Button
-            className="bg-pink-400 hover:bg-pink-500 text-white"
-            disabled={!isChecked}
-            onClick={combinate}
-          >
-            Ir a la siguiente sección
-          </Button>
-        </div>
       </div>
     </>
   );
