@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { DataTable } from '.';
+import { ChampionDataTables } from '../DataTables/ChampionDataTable';
 import { championsData, columns,  } from '@/types/ChampionsTable.types';
 import { Spinner } from '../ui/spinner';
 
@@ -28,7 +28,7 @@ const ChampionsTable: React.FC = () => {
 
   return (
 
-    <DataTable columns={columns} data={championsData} />
+    <ChampionDataTables columns={columns} data={championsData} />
   
   )
 }

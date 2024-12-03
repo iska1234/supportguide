@@ -7,7 +7,7 @@ const HomePage:React.FC = () => {
   return (
     <>
       <TransitionEffect />
-      <div className="-mt-10 min-h-screen bg-pink-50 px-24 flex items-center justify-center text-gray-800">
+      <div className="-mt-10 pb-20 h-full pt-40 min-h-screen bg-pink-50 px-24 flex items-center justify-center text-gray-800">
         <div className="flex items-center flex-col justify-center w-1/2">
           <h1 className="text-4xl font-primaryBold text-pink-600 mb-4">
             Guía de Supports

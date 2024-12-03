@@ -1,4 +1,4 @@
-import SupportItemsTable from "@/components/championsTable/SupportitemsTable";
+import SupportItemsTable from "@/components/championsTable/supportItemTables";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
 import React from "react";
 

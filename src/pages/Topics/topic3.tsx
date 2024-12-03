@@ -1,4 +1,4 @@
-import ProsContras from "@/components/championsTable/prosContras";
+import ProsContras from "@/components/championsTable/prosContrasTable";
 import Lottie from "@/components/Lottie";
 import MessageFromCat from "@/components/messageFromCat";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";

@@ -1,3 +1,5 @@
+import { ColumnDef } from "@tanstack/react-table";
+
 export type SupportItem = {
   name: string;
   image: string;
@@ -6,29 +8,6 @@ export type SupportItem = {
   advantage: string;
   category: string;
 };
-export const supportItemColumns = [
-  {
-    header: 'Nombre',
-    accessor: 'name', // Nombre de la propiedad del objeto SupportItem
-  },
-  {
-    header: 'Descripción',
-    accessor: 'description', // Descripción del item
-  },
-  {
-    header: 'Cuándo buildearlo',
-    accessor: 'whenToBuild', // Momento recomendado para construir el item
-  },
-  {
-    header: 'Ventaja',
-    accessor: 'advantage', // Ventaja del item
-  },
-  {
-    header: 'Categoría',
-    accessor: 'category', // Categoría a la que pertenece el item
-  },
-];
-
 
 export const supportItemsData: SupportItem[] = [
 
@@ -240,31 +219,44 @@ export const supportItemsData: SupportItem[] = [
 
 ];
 
-export const groupedData = {
-  "Mejoras iniciales": supportItemsData.filter(item => item.category === "Mejoras Iniciales de Support"),
-  "Items de enchanters": supportItemsData.filter(item => item.category === "Items de Enchanters"),
-  "Items de tanques": supportItemsData.filter(item => item.category === "Items de tanques"),
-  "Items de magos": supportItemsData.filter(item => item.category === "Items de Magos")
-};
+export const columnsItems: ColumnDef<SupportItem>[] = [
+  {
+    accessorKey: "image",
+    header: "Item",
+    cell: ({ row }) => (
+      <img
+        src={row.original.image}
+        alt={row.original.name}
+        className="w-16 h-16 object-contain mx-auto"
+      />
+    ),
+  },
+  {
+    accessorKey: "description",
+    header: "Descripción",
+    cell: ({ row }) => (
+      <p className="font-primaryRegular">
+        {row.original.description}
+      </p>
+    ),
+  },
+  {
+    accessorKey: "advantage",
+    header: "Ventajas",
+    cell: ({ row }) => (
+      <p className="font-primaryRegular">
+        {row.original.advantage}
+      </p>
+    ),
+  },
+  {
+    accessorKey: "whenToBuild",
+    header: "Cuándo Buildearlo",
+    cell: ({ row }) => (
+      <p className=" font-primaryRegular">
+        {row.original.whenToBuild}
+      </p>
+    ),
+  },
 
-export const SupportItemsList = () => {
-  return (
-    <div>
-      {Object.keys(groupedData).map((category) => (
-        <div key={category}>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {groupedData[category as keyof typeof groupedData].map((item) => (
-              <div key={item.name} className="p-4 border rounded-lg shadow-lg">
-                <img src={item.image} alt={item.name} className="w-full h-40 object-cover rounded-md" />
-                <p className="text-gray-700 mt-2">{item.description}</p>
-                <p className="text-gray-600 mt-2"><strong>Cuándo buildearlo:</strong> {item.whenToBuild}</p>
-                <p className="text-gray-600 mt-2"><strong>Ventaja:</strong> {item.advantage}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
+];
