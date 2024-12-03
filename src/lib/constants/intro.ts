@@ -11,5 +11,5 @@ export const positionsIntro = [
     { top: "10%", left: "20%" },
     { top: "70%", left: "70%" },
     { top: "60%", left: "15%" },
-    { top: "20%", left: "70%" },
+    { top: "0%", left: "70%" },
 ];
