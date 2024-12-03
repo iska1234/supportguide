@@ -1,8 +1,14 @@
 import SupportItemsTable from "@/components/championsTable/supportItemTables";
+import MarkAsCompleted from "@/components/markAsCompleted";
 import TransitionEffect from "@/components/transitionEffect/TransitionEffect";
+import { useUpdateAndNavigate } from "@/hooks/useUpdateAndNavigate";
 import React from "react";
 
 const Topic4Page: React.FC = () => {
+  const { isChecked, setIsChecked, combinate } = useUpdateAndNavigate({
+    topicId: 4,
+    nextRoute: "/topic/5",
+  });
   return (
     <>
       <TransitionEffect />
@@ -15,13 +21,17 @@ const Topic4Page: React.FC = () => {
             Los soportes en League of Legends desempeñan un papel crucial al
             proteger, potenciar y ayudar a su equipo. La elección de objetos
             puede marcar la diferencia entre el éxito y la derrota en la
-            partida. A continuación, te presentamos una guía completa y
-            ordenada de los objetos más importantes para este rol.
+            partida. A continuación, voy a hablar de mi experiencia en items hasta la actualidad
           </p>
         </div>
         <div className="px-4 mt-10 text-black text-lg">
           <SupportItemsTable />
         </div>
+        <MarkAsCompleted 
+          combinate={combinate}
+          isChecked={isChecked}
+          setIsChecked={setIsChecked}
+          />
       </div>
     </>
   );

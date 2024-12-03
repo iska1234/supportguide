@@ -3,11 +3,19 @@ import React, { useEffect, useState } from "react";
 import { Input } from "../ui/input";
 import { columnsItems, supportItemsData } from "@/types/Supportitem.types";
 import { ItemsDataTable } from "../DataTables/ItemsDataTable";
+import Select from "../ui/select";
 
 const SupportItemsTable: React.FC = () => {
-  
   const [loading, setLoading] = useState<boolean>(true);
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+
+  const categories = [
+    "Mejoras Iniciales de Support",
+    "Items de Enchanters",
+    "Items de tanques",
+    "Items de Magos",
+  ];
 
   useEffect(() => {
     const loadData = async () => {
@@ -37,61 +45,59 @@ const SupportItemsTable: React.FC = () => {
 
   return (
     <div>
-      <Input
-        type="search"
-        placeholder="Búsqueda rápida"
-        className="w-full p-2 border border-gray-300 rounded-md mb-4"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+      <div className="py-4 flex justify-between w-full items-center">
+        <Input
+          wrapperClassName="w-1/2"
+          type="search"
+          placeholder="Búsqueda rápida"
+          className="w-full p-2 border border-gray-300 rounded-md "
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <Select
+          widthClass="mt-4 w-1/4 text-center border text-black placeholder:text-black "
+          className="border-0 px-2 data-[placeholder]:bg-none data-[placeholder]:text-black data-[placeholder]:font-primaryBold w-full text-lg focus:ring-0 font-primaryMedium gap-2 bg-white text-black"
+          name="Company Name"
+          placeholder="Seleccionar Categoría"
+          items={[
+            { label: "Todos", value: "all" },
+            ...categories.map((category) => ({
+              label: category,
+              value: category,
+            })),
+          ]}
+          onValueChange={(value) =>
+            setSelectedCategory(value === "all" ? "" : value)
+          }
+          itemClass="w-full px-4"
+        />
+      </div>
 
-      {searchFilteredData("Mejoras Iniciales de Support").length > 0 && (
-        <>
-          <h2 className="py-8 w-full bg-pink-500 text-xl font-bold rounded-t-md text-white text-center">
-            Mejoras Iniciales de Support
-          </h2>
-          <ItemsDataTable
-            columns={columnsItems}
-            data={searchFilteredData("Mejoras Iniciales de Support")}
-          />
-        </>
-      )}
-
-      {searchFilteredData("Items de Enchanters").length > 0 && (
-        <>
-          <h2 className="py-8 w-full bg-pink-500 text-xl font-bold rounded-t-md text-white text-center">
-            Items de Enchanters
-          </h2>
-          <ItemsDataTable
-            columns={columnsItems}
-            data={searchFilteredData("Items de Enchanters")}
-          />
-        </>
-      )}
-
-      {searchFilteredData("Items de tanques").length > 0 && (
-        <>
-          <h2 className="py-8 w-full bg-pink-500 text-xl font-bold rounded-t-md text-white text-center">
-            Items de Tanques
-          </h2>
-          <ItemsDataTable
-            columns={columnsItems}
-            data={searchFilteredData("Items de tanques")}
-          />
-        </>
-      )}
-
-      {searchFilteredData("Items de Magos").length > 0 && (
-        <>
-          <h2 className="py-8 w-full bg-pink-500 text-xl font-bold rounded-t-md text-white text-center">
-            Items de Magos
-          </h2>
-          <ItemsDataTable
-            columns={columnsItems}
-            data={searchFilteredData("Items de Magos")}
-          />
-        </>
-      )}
+      {selectedCategory
+        ? searchFilteredData(selectedCategory).length > 0 && (
+            <>
+              <h2 className="py-8 w-full bg-pink-500 text-xl font-bold rounded-t-md text-white text-center">
+                {selectedCategory}
+              </h2>
+              <ItemsDataTable
+                columns={columnsItems}
+                data={searchFilteredData(selectedCategory)}
+              />
+            </>
+          )
+        : categories.map((category) =>
+            searchFilteredData(category).length > 0 ? (
+              <div key={category}>
+                <h2 className="py-8 w-full bg-pink-500 text-xl font-bold rounded-t-md text-white text-center">
+                  {category}
+                </h2>
+                <ItemsDataTable
+                  columns={columnsItems}
+                  data={searchFilteredData(category)}
+                />
+              </div>
+            ) : null
+          )}
     </div>
   );
 };
