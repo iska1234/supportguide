@@ -28,7 +28,7 @@ const AnimatedRoutes: React.FC = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<IntroPage />} />
+        <Route path="/" element={<ProtectedRoute><IntroPage /></ProtectedRoute>} />
         <Route
           path="/login"
           element={
