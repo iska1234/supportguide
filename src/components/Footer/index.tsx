@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
@@ -9,9 +10,7 @@ const Footer: React.FC = () => {
             <h2 className="text-lg font-semibold text-pink-500 mb-4">
               Sobre Nosotros
             </h2>
-            <p className="text-sm leading-relaxed">
-              En proceso
-            </p>
+            <p className="text-sm leading-relaxed">En proceso</p>
           </div>
           <div>
             <h2 className="text-lg font-semibold text-pink-500 mb-4">
@@ -85,8 +84,19 @@ const Footer: React.FC = () => {
 
         <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm">
           <p>
-            © 2024 Todos los derechos reservados. | Diseñado con mucho{" "}
-            <span className="text-pink-500">❤</span> por iskadev
+            © 2024 Todos los derechos reservados. | Desarrollado con mucho{" "}
+            <span className="text-pink-500">❤</span> por{" "}
+            <Link className="text-pink-600" to={"https://cavero-portfolio.vercel.app"} target="_blank">
+            {" "}iskadev
+            </Link>{" "}
+            & Diseñado por{" "}
+            <Link
+              to={"https://designsbymeeow.com/"}
+              className="text-pink-600"
+              target="_blank"
+            >
+              Eri
+            </Link>
           </p>
         </div>
       </div>
